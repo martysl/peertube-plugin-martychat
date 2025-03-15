@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ChatWindow from "./components/ChatWindow";
+import App from "./App";
+import "./styles/global.css";
 
-ReactDOM.render(<ChatWindow />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
