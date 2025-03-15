@@ -7,7 +7,7 @@ A custom live chat plugin for PeerTube using Matrix as the backend.
 - No authentication required
 - CAPTCHA verification for message sending
 - Image uploads supported
-- Supports both Matrix and Discord as backends
+- Supports Matrix as backends
 
 ## Installation
 
