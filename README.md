@@ -13,7 +13,7 @@ A custom live chat plugin for PeerTube using Matrix as the backend.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/peertube-plugin-martychat.git
+   git clone https://github.com/martysl/peertube-plugin-martychat.git
    cd peertube-plugin-martychat
    ```
 2. Install dependencies:
