@@ -1,6 +1,6 @@
 # PeerTube Live Chat Plugin
 
-A custom live chat plugin for PeerTube using Matrix or Discord as the backend.
+A custom live chat plugin for PeerTube using Matrix as the backend.
 
 ## Features
 - Full-featured real-time chat
