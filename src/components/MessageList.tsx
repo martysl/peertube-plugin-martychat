@@ -12,8 +12,7 @@ export default function MessageList({ messages }: MessageListProps) {
       ) : (
         messages.map((msg) => (
           <div key={msg.id} className="mb-3 p-2 border rounded-md bg-gray-100">
-            <strong className="text-blue-600">{msg.name}:</strong> {msg.message}
-            {msg.imageUrl && <img src={msg.imageUrl} alt="Uploaded" className="max-w-xs mt-2 rounded-md" />}
+            <strong className="text-blue-600"> {msg.message} </strong>
           </div>
         ))
       )}
