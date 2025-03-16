@@ -1,3 +1,4 @@
+import { Message } from "@/types";
 import { useState, useEffect } from "react";
 import MessageList from "./MessageList";
 import MessageInput from "./MessageInput";
