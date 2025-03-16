@@ -9,9 +9,7 @@ export default function ChatWindow() {
   const sendMessage = async (name: string, message: string, image: File | null) => {
     const newMessage: Message = {
       id: crypto.randomUUID(),
-      name,
       message,
-      imageUrl: image ? URL.createObjectURL(image) : undefined,
     };
 
     setMessages([...messages, newMessage]);
