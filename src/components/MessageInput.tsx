@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Input, Button } from "../../components/ui/input"; // Ensure this file exists
-import { Message } from "@/types"; // Ensure Message type is defined
+import { Message } from "../types"; // Ensure Message type is defined
 
 interface MessageInputProps {
   onSendMessage: (message: Message) => void;
