@@ -1,15 +1,16 @@
 import { Message } from "../types";
-interface MessageProps {
+
+interface MessageListProps {
   messages: Message[];
 }
 
-export default function MessageList({ messages }: MessageProps) {
+export default function MessageList({ messages }: MessageListProps) {
   return (
-    <div className="flex-grow overflow-y-auto p-2 h-64 border border-gray-700 rounded-md">
-      {messages.map((msg, index) => (
-        <div key={index} className="p-1">
+    <div className="p-4 overflow-y-auto flex-1">
+      {messages.map((msg) => (
+        <div key={msg.id} className="mb-2">
           <b>{msg.name}:</b> {msg.message}
-          {msg.image && <img src={msg.image} alt="Uploaded" className="max-w-xs mt-2" />}
+          {msg.imageUrl && <img src={msg.imageUrl} alt="Uploaded" className="max-w-xs mt-2" />}
         </div>
       ))}
     </div>
