@@ -1,18 +1,50 @@
-import { Message } from "../types";
+import { useState } from "react";
 
-interface MessageListProps {
-  messages: Message[];
+interface MessageInputProps {
+  onSend: (name: string, message: string, image: File | null) => void;
 }
 
-export default function MessageList({ messages }: MessageListProps) {
+export default function MessageInput({ onSend }: MessageInputProps) {
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [image, setImage] = useState<File | null>(null);
+
+  const send = () => {
+    if (name.trim() && message.trim()) {
+      onSend(name, message, image);
+      setMessage("");
+      setImage(null);
+    }
+  };
+
   return (
-    <div className="p-2 space-y-2">
-      {messages.map((msg, index) => (
-        <div key={index} className="p-2 border rounded">
-          <b>{msg.name}:</b> {msg.message}
-          {msg.imageUrl && <img src={msg.imageUrl} alt="Uploaded" className="max-w-xs mt-2" />}
-        </div>
-      ))}
+    <div className="p-4 flex gap-2 items-center border-t bg-gray-50">
+      <input
+        type="text"
+        placeholder="Your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="p-2 border rounded flex-1"
+      />
+      <input
+        type="text"
+        placeholder="Type a message..."
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        className="p-2 border rounded flex-1"
+      />
+      <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => setImage(e.target.files?.[0] ?? null)}
+        className="p-2 border rounded"
+      />
+      <button
+        onClick={send}
+        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
+        Send
+      </button>
     </div>
   );
 }
