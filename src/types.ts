@@ -3,5 +3,8 @@ export type Message = {
   sender: string;
   content: string;
   timestamp: number;
-  image?: string;
 };
+export interface Message {
+  id: string;
+  name: string;
+  message: string;
