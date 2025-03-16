@@ -1,3 +1,4 @@
+import { Message } from "@/types";
 interface MessageProps {
   messages: Message[];
 }
