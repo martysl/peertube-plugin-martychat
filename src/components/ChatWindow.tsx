@@ -1,24 +1,21 @@
-import { useState } from "react";
-import MessageInput from "./MessageInput";
+import { useState, useEffect } from "react";
+//import { Message } from "../types"; // Importing the Message type
 import MessageList from "./MessageList";
-import { Message } from "../types"; // Importing the Message type
+import MessageInput from "./MessageInput";
+import { fetchMessages, sendMessage } from "../utils/matrixClient";
 
 export default function ChatWindow() {
   const [messages, setMessages] = useState<Message[]>([]);
 
-  const sendMessage = async (message: string) => {
-    const newMessage: Message = {
-      id: crypto.randomUUID(),
-      message,
-    };
-
-    setMessages([...messages, newMessage]);
-  };
+  useEffect(() => {
+    fetchMessages(setMessages);
+  }, []);
 
   return (
-    <div className="flex flex-col h-full w-full p-4 border rounded-lg bg-white shadow-md">
+    <div className="fixed bottom-4 right-4 w-80 bg-gray-900 text-white shadow-lg rounded-lg flex flex-col">
+      <div className="bg-gray-700 p-2 rounded-t-lg text-center font-bold">PeerTube Live Chat</div>
       <MessageList messages={messages} />
-      <MessageInput onSend={sendMessage} />
+      <MessageInput onSend={sendMessage} setMessages={setMessages} />
     </div>
   );
 }
