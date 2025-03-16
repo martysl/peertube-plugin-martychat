@@ -5,5 +5,4 @@ export interface Message {
   timestamp: number;
   name: string;
   message: string;
-  newMessage string;
 };
