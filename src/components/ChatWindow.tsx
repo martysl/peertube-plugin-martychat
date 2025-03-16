@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MessageInput from "./MessageInput";
 import MessageList from "./MessageList";
-import { Message } from "../types"; // Import Message type
+import { Message } from "../types"; // Importing the Message type
 
 export default function ChatWindow() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -18,7 +18,7 @@ export default function ChatWindow() {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full w-full p-4 border rounded-lg bg-white shadow-md">
       <MessageList messages={messages} />
       <MessageInput onSend={sendMessage} />
     </div>
