@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Input, Button } from ../input"; // Ensure this file exists
+import { Input, Button } from "../input"; // Ensure this file exists
 import { Message } from "../types"; // Ensure Message type is defined
 
 interface MessageInputProps {
