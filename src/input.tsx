@@ -1,12 +1,9 @@
-import React from "react";
-export function Input({ ...props }) {
-  return <input className="border p-2 rounded" {...props} />;
+import { ButtonHTMLAttributes, ReactNode } from "react";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
 }
 
-export function Button({ children, ...props }) {
-  return (
-    <button className="bg-blue-500 text-white p-2 rounded" {...props}>
-      {children}
-    </button>
-  );
+export function Button({ children, ...props }: ButtonProps) {
+  return <button {...props}>{children}</button>;
 }
