@@ -2,11 +2,6 @@ import { useState } from "react";
 import { Input, Button } from "../input"; // Ensure this file exists
 import { Message } from "../types"; // Ensure Message type is defined
 
-interface MessageInputProps {
-  onSend: (name: string, message: string, image: File | null, setMessages: any) => Promise<void>;
-  setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
-}
-
 export default function MessageInput({ onSendMessage }: MessageInputProps) {
   const [name, setName] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -27,6 +22,10 @@ export default function MessageInput({ onSendMessage }: MessageInputProps) {
       timestamp: Date.now(),
       imageUrl: image ? URL.createObjectURL(image) : undefined,
     };
+    interface MessageInputProps {
+  onSend: (name: string, message: string, image: File | null, setMessages: any) => Promise<void>;
+  setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
+}
 
     onSendMessage(newMessage);
     setMessage("");
