@@ -3,5 +3,5 @@ export type Message = {
   sender: string;
   content: string;
   timestamp: number;
-  imageUrl?: string;
+  image?: string;
 };
