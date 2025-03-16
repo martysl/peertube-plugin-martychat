@@ -3,7 +3,8 @@ import { Input, Button } from "../../components/ui/input"; // Ensure this file e
 import { Message } from "../types"; // Ensure Message type is defined
 
 interface MessageInputProps {
-  onSendMessage: (message: Message) => void;
+  onSend: (name: string, message: string, image: File | null, setMessages: any) => Promise<void>;
+  setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
 }
 
 export default function MessageInput({ onSendMessage }: MessageInputProps) {
