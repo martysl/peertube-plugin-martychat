@@ -6,7 +6,7 @@ import { Message } from "../types"; // Importing the Message type
 export default function ChatWindow() {
   const [messages, setMessages] = useState<Message[]>([]);
 
-  const sendMessage = async (name: string, message: string ) => {
+  const sendMessage = async (message: string) => {
     const newMessage: Message = {
       id: crypto.randomUUID(),
       message,
